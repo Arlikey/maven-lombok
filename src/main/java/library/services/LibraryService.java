@@ -2,6 +2,9 @@ package library.services;
 
 import library.models.catalogue.Library;
 import library.models.editions.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -10,20 +13,11 @@ import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class LibraryService {
     private Library library;
-
-    public LibraryService(Library library) {
-        this.library = library;
-    }
-
-    public Library getLibrary() {
-        return library;
-    }
-
-    public void setLibrary(Library library) {
-        this.library = library;
-    }
 
     public boolean addPublication(Publication p) {
         return library.getPublications().add(p);
